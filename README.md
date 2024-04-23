@@ -167,6 +167,8 @@ def search_result_party():
   
   **1.e.6 Pie Chart**
 
+   Same interface for all above exercise
+
   	1) Following image shows the web interface for selecting company name and showing result for 1.e.2, 1.e.4 and 1.e.5
 
  ![company_wise_bond_details](https://github.com/TejasLohia21/23110335_DCC/assets/143334144/dd57282b-747f-40b7-bd1e-d589f6d9aab8)
