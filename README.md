@@ -183,7 +183,11 @@ def search_result_party():
 ![compnay  year wise with pie chart1](https://github.com/TejasLohia21/23110335_DCC/assets/143334144/cc5eb330-8106-4c72-8a21-5ec141b5b868)
 
 **b) Result 1.e.2 and 1.e.6**
- 		(i) Drop down menu used for searching and selecting compnay name. At a time only one company can be selected. When user click button "party wise bond details" , request to server is sent with company name. company_bond_count() function is called. Inside this function, different query is executed and result is shown by using ie2_company.html
+ 		(i)  Drop down menu used for searching and selecting compnay name. 
+   		(ii) At a time only one company can be selected.
+     		(iii)When user click button "party wise bond details" , request to server is sent with company name. 
+       		(iv) company_bond_count() function is called. 
+	 	(v)  Inside this function, different query is executed and result is shown by using ie2_company.html
    		
      			SELECT DISTINCT `Name_of_Purchaser` FROM `company` 
 			SELECT COUNT(*) FROM company where `Name_of_Purchaser`=%s",(selected_option,)
