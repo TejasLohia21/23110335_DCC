@@ -160,7 +160,9 @@ def search_result_party():
 
 **1. e.**
   **1.e.2. The option to select a Company/Individual from a drop-down/search**
+  
   **1.e.5 Similarly, provide an option to select a company from a drop-down/search, showcasing which parties they have donated and what amount individually and combined**
+  
   **1.e.6 Pie Chart**
 
   	1) Following image shows the web interface for selecting company name and showing result for 1.e.2, 1.e.4 and 1.e.5
