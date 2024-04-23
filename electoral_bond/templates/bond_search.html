@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bond Search Application</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+</head>
+<body>
+	<div class="container">
+                <!-- Ref https://www.w3schools.com/bootstrap/bootstrap_forms.asp -->
+                <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                            <form method="POST" action="/search/result_party">
+                                <h1>
+                                        Party Wise Search
+                                </h1>
+                                <div class="form-group">
+                                        <label for="party_name">Name of the Political Party</label>
+                                        <input type="text" class="form-control" id="party_name" name="party_name">
+                                </div>
+                                <!-- https://www.w3schools.com/tags/att_input_type_number.asp -->
+
+                                <div class="form-group">
+                                        <label for="bond_number">Bond Number</label>
+                                        <div><input type="number" id="bond_number" name="bond_number" min="0" ></div>
+                                </div>
+
+                                <div class="form-group">
+                                        <label for="denominations">Denominations</label>
+                                        <div><input type="number" id="denominations" name="denominations" min="0" ></div>
+                                </div>
+                                
+                                <div class="form-group">
+                                        <label for="pay_branch_code">Pay Branch Code</label>
+                                        <div><input type="text" id="pay_branch_code" name="pay_branch_code" ></div>
+                                </div>
+                                <div class="form-group">
+                                        <label for="year">Purchase Year</label>
+                                        <div><select id="year" name="year">
+                                                <option selected value="NOT SELECTED">   </option>
+                                                <option value="2018">2018</option>
+                                                <option value="2019">2019</option>
+                                                <option value="2020">2020</option>
+                                                <option value="2021">2021</option>
+                                                <option value="2022">2022</option>
+                                                <option value="2023">2023</option>
+                                                <option value="2024">2024</option>
+                                                
+                                        </select></div>
+                                          
+                                </div>     
+                                <button type="submit" class="btn btn-primary" name="Search">Search Party Details</button>
+                            </form>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <form method="POST" action="/search/result_company"">
+                                <!-- Form 2 content goes here -->
+                                <h1>
+                                        Company/Individual Search
+                                </h1>
+                                <div class="form-group">
+                                        <label for="purchaser_name">Name of Purchaser</label>
+                                        <input type="text" class="form-control" id="purchaser_name" name="purchaser_name">
+                                </div>
+                                <div class="form-group">
+                                        <label for="bond_number">Bond Number</label>
+                                        <div><input type="number" id="bond_number" name="bond_number" min="0" ></div>
+                                </div>
+
+                                <div class="form-group">
+                                        <label for="denominations">Denominations</label>
+                                        <div><input type="number" id="denominations" name="denominations" min="0" ></div>
+                                </div>
+                                
+                                <div class="form-group">
+                                        <label for="pay_branch_code">Issue Branch Code</label>
+                                        <div><input type="text" id="pay_branch_code" name="pay_branch_code" ></div>
+                                </div>
+                                <div class="form-group">
+                                        <label for="year">Issue Year</label>
+                                        <div><select id="year" name="year">
+                                                <option selected value="NOT SELECTED">   </option>
+                                                <option value="2018">2018</option>
+                                                <option value="2019">2019</option>
+                                                <option value="2020">2020</option>
+                                                <option value="2021">2021</option>
+                                                <option value="2022">2022</option>
+                                                <option value="2023">2023</option>
+                                                <option value="2024">2024</option>
+                                                
+                                        </select></div>
+                                          
+                                </div>
+                                <div class="form-group">
+                                        <label for="ref_no_urn">Ref. No. URN</label>
+                                        <input type="text" class="form-control" id="ref_no_urn" name="ref_no_urn">
+                                </div>
+
+                                <button type="submit" class="btn btn-primary" name="Search Purchase">Search Purchase Details</button>
+                            </form>
+                        </div>
+
+                        
+                </div>
+                {% if show_flag == 1%}
+                result
+                <div class="row">
+                        <h1> Result : Total Result {{total_len}}</h1>
+                        <h2>Search Results shown  maximum no 10</h2>
+                        <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Sr. No</th>
+                                        <th>Party</th>
+                                        <th>Bond Number</th>
+                                        <th>Denominations</th>
+                                        <th>Date of Encashment</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Loop through 10 rows -->
+                                    {% for i in range(0, data_len) %}
+                                    <tr>
+                                        <td>{{ i+1 }}</td>
+                                        <td>{{ party_name[i] }}</td>
+                                        <td>{{ bondnos[i] }}</td>
+                                        <td>{{ Denominations[i] }}</td>
+                                        <td>{{ year[i] }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+
+                        <ul>
+                        {% for result in results %}
+                                <li>{{ result.column_name }}</li>
+                                <!-- You can display other columns as needed -->
+                                {% endfor %}
+                        </ul>
+                </div>
+                {% endif %}
+
+                {% if show_flag == 2%}
+                result
+                <div class="row">
+                        <h1> Result : Total Result {{total_len}}</h1>
+                        <h2>Search Results shown  maximum no 10</h2>
+                        <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Sr. No</th>
+                                        <th>Purchaser</th>
+                                        <th>Bond Number</th>
+                                        <th>Denominations</th>
+                                        <th>Date of Purchase</th>
+                                        <th>Ref. No. URN</th>
+                                        </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Loop through 10 rows -->
+                                    {% for i in range(0, data_len) %}
+                                    <tr>
+                                        <td>{{ i+1 }}</td>
+                                        <td>{{ party_name[i] }}</td>
+                                        <td>{{ bondnos[i] }}</td>
+                                        <td>{{ Denominations[i] }}</td>
+                                        <td>{{ year[i] }}</td>
+                                        <td>{{ urn[i] }}</td>
+                                        
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+
+                        <ul>
+                        {% for result in results %}
+                                <li>{{ result.column_name }}</li>
+                                <!-- You can display other columns as needed -->
+                                {% endfor %}
+                        </ul>
+                </div>
+                {% endif %}
+
+        </div>
+
+</body>
+
+</html>

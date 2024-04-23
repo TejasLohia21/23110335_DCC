@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Party Bond 1E3</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    	HI Party with bootstrap
+    	
+    	
+    	
+    	<div>
+    		<div>
+  			<canvas id="myChart"></canvas>
+		</div>
+
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+		<script>
+  			const ctx = document.getElementById('myChart');
+
+			  new Chart(ctx, {
+				    type: 'bar',
+				    data: {
+				      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+				      datasets: [{
+					label: '# of Votes',
+					data: [12, 19, 3, 5, 2, 3],
+					borderWidth: 1
+				      }]
+				    },
+				    options: {
+				      scales: {
+					y: {
+					  beginAtZero: true
+					}
+				      }
+				    }
+				  });
+				</script>
+
+    	
+    	</div>
+    	
+    	
+    	 <form method="post" action="/a_2">
+            <label>Search a Movie by Genre:</label>
+            <input name="box" type="text" id="movie_by_genre">
+            <input id="a_2" type="submit">
+        </form>
+        
+        <form method="post" action="/party/count_party_bond">
+            <label>Select Politcal Party</label>
+            <select id="party">
+            	{% if party_name%}
+        	{% for item in party_name %}
+        	<option value={{ item[0] }}>{{ item[0] }}</option>
+            	{% endfor %}
+        	{% endif %}
+            <input id="count_party_bond" type="submit">
+        </form>
+        
+        <div>
+        {% if party_bond_count%}
+        	<label>No of Bonds : 
+        		{% for item in party_bond_count %}
+        		{{ item[0] }}
+        		{% endfor %}
+        	</label>
+        	
+        {% endif %}
+        </div>
+        
+       <div>
+       <label>No of Bonds :  {{ party_bond_count[0] }}   </label>
+       </div>
+        
+        
+        
+    </body>
+
+</html>

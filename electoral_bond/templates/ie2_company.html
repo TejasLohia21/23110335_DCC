@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Party Bond 1E3</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+
+</head>
+<body>
+	<div class="container">
+    		<div class="row">
+			<h1 class="display-1"> Company/Indiviual Bond Details 1</h1>
+		</div>
+    	
+    		<div class="row">
+		    	<form method="post" action="/company/company_bond_count">
+			    <label>Select Company/Individual</label>
+			    <select id="company_id" name="selected_company_name">
+			    	{% if company_name%}
+				{% for item in company_name %}
+					{% if selected_company ==  item[0] %}
+					<option selected value="{{ item[0] }}">{{ item[0] }}</option>
+					{% else %}
+					<option value="{{ item[0] }}">{{ item[0] }}</option>
+					{% endif %}
+				{% endfor %}
+				{% endif %}
+			    <input name="company_action" id="company_bond_count" type="submit" value="Year Wise Bond Details">
+			    <input name="company_action" id="company_company_details" type="submit" value="Party Wise Bond Details">
+			</form>
+        	</div>
+		
+		<div class="row">
+			{% if year_wise_bond%}
+			<p></p><p></p>
+			<h1 class="display-1">
+			<label>Total No of Bonds by {{ selected_company }} :
+				{% for item in company_bond_count %}
+				{{ item[0] }}
+				{% endfor %}
+        		</label>
+			<label>
+				<h1>Total Amount of Bonds by {{ selected_party }} : Rs.
+				{{ total_sum }}
+				</h1>
+			</label>
+        		</h1>
+       			 {% endif %}
+
+			{% if party_wise_bond%}
+			<p></p><p></p>
+			<h1 class="display-1">
+			<label>Total No of Bonds by {{ selected_company }} :
+				{% for item in company_bond_count %}
+				{{ item[0] }}
+				{% endfor %}
+			</label>
+			<label>
+				<h1>Total Amount of Bonds by {{ selected_party }} : Rs.
+				{{ total_sum }}
+				</h1>
+			</label>
+			</h1>
+			{% endif %}
+		</div> 
+	
+		{% if year_wise_bond%}
+    		<div class="row">
+			<div class="col-lg-6">
+				<canvas id="div_yr_vs_noOfBonds"></canvas>
+			</div>
+			<div class="col-lg-6">
+        			<canvas id="div_yr_vs_noOfBonds_pie_chart"></canvas>
+				ajay
+			</div>
+    		</div>
+
+		<div class="row">
+			<div class="col-lg-6">
+				<canvas id="div_yr_vs_amountOfBonds"></canvas>
+			</div>
+			<div class="col-lg-6">
+        			<canvas id="div_yr_vs_amountOfBonds_pie_chart"></canvas>
+				ajay
+			</div>
+    		</div>
+    		{% endif %}
+
+
+		{% if party_wise_bond%}
+    		<div class="row">
+    			<div class="col-lg-12">
+  				<canvas id="div_party_vs_amount"></canvas>
+			</div>
+    		</div>
+
+		<div class="row">
+			<div class="col-lg-12" >
+			    	<canvas id="div_party_vs_amount_pie_chart"></canvas>
+			</div
+		</div>
+		
+    		{% endif %}
+  	</div>
+	<script>
+		var colors = [
+			'red',
+			'blue',
+			'green',
+			'yellow',
+			'orange',
+			'purple',
+			'cyan',
+			'magenta',
+			'lime',
+			'pink',
+			'teal',
+			'lavender',
+			'brown',
+			'maroon',
+			'olive',
+			'navy',
+			'indigo',
+			'skyblue',
+			'coral',
+			'silver'
+			];
+	</script>
+	{% if year_wise_bond%}
+	<script>
+		const ctx = document.getElementById('div_yr_vs_noOfBonds');
+		const xValues = {{ years | safe }};
+		const yValues = {{ no_of_bonds_per_year | safe }};
+		new Chart(ctx, {
+			type: 'bar',
+		    	data: {
+			    	labels: xValues,
+			      	datasets: [{
+					label: 'Year Wise Bond',
+					backgroundColor:colors,
+					borderColor: "#FFFFFF",
+					data: yValues,
+					borderWidth: 1
+			      	}]
+		    	},
+		    	options: {
+        			scales: {
+            			yAxes: [{
+                			ticks: {
+		            			beginAtZero: true,
+		            			suggestedMax: 15 // Set the maximum height of the chart to 20
+		        		}
+            				}]
+        			}
+    			}
+		    
+		});
+
+		///////////////
+		new Chart(document.getElementById("div_yr_vs_noOfBonds_pie_chart"), {
+			type: 'pie',
+			data: {
+            			labels: xValues,
+            			datasets: [{
+					label: "Year Wise Bond",
+					backgroundColor:colors,
+                			data: yValues
+            			}]
+        		},
+			options: {
+				title: {
+					display: true,
+					text: 'Year Wise Bond'
+				}
+				
+			}
+		}
+		);
+		////////////
+		
+		const ctx1 = document.getElementById('div_yr_vs_amountOfBonds');
+		const xValues_1 = {{ years | safe }};
+		const yValues_1 = {{ amounts_per_year | safe }};
+		new Chart(ctx1, {
+			type: 'bar',
+		    	data: {
+			    	labels: xValues_1,
+			      	datasets: [{
+					label: 'Year Wise Amount',
+					backgroundColor:colors,// "#937aa1",
+					borderColor: "#FFFFFF",
+					data: yValues_1,
+					borderWidth: 1
+			      	}]
+		    	},
+		    	options: {
+        			scales: {
+            			yAxes: [{
+                			ticks: {
+		            			beginAtZero: true,
+		            			suggestedMax: 15 // Set the maximum height of the chart to 20
+		        		}
+            				}]
+        			}
+    			}
+		    
+		});
+
+		///////////////
+		new Chart(document.getElementById("div_yr_vs_amountOfBonds_pie_chart"), {
+			type: 'pie',
+			data: {
+            			labels: xValues_1,
+            			datasets: [{
+					label: "Year Wise Amount",
+					backgroundColor:colors,
+                			data: yValues_1
+            			}]
+        		},
+			options: {
+				title: {
+					display: true,
+					text: 'Year Wise Amount'
+				}
+				
+			}
+		}
+		);
+		////////////
+		
+		
+	</script>
+	{% endif %}
+
+
+	{% if party_wise_bond%}
+	<script>
+		const ctx = document.getElementById('div_party_vs_amount');
+		const xValues = {{ party_name | safe }};
+		const yValues = {{ amount | safe }};
+		
+		new Chart(ctx, {
+			type: 'bar',
+		    	data: {
+			    	labels: xValues,
+			      	datasets: [{
+					label: 'Party Wise Bond',
+					backgroundColor:colors, //"#937aa1",
+					borderColor: "#FFFFFF",
+					data: yValues,
+					borderWidth: 1
+			      	}]
+		    	},
+		    	options: {
+        			scales: {
+            			yAxes: [{
+                			ticks: {
+		            			beginAtZero: true,
+		            			suggestedMax: 15 // Set the maximum height of the chart to 20
+		        		}
+            				}]
+        			}
+    			}
+		    
+		});
+
+
+		new Chart(document.getElementById("div_party_vs_amount_pie_chart"), {
+			type: 'pie',
+			data: {
+            			labels: xValues,
+            			datasets: [{
+					label: "Party Wise Bond",
+					backgroundColor:colors,
+                			data: yValues
+            			}]
+        		},
+			options: {
+				title: {
+					display: true,
+					text: 'Party Wise Bond'
+				}
+	
+			}
+		}
+		);
+
+		
+	</script>
+	{% endif %}
+
+
+  		
+    </body>
+
+</html>
