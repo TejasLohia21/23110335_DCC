@@ -167,7 +167,7 @@ def search_result_party():
 
  ![company_wise_bond_details](https://github.com/TejasLohia21/23110335_DCC/assets/143334144/dd57282b-747f-40b7-bd1e-d589f6d9aab8)
 
- 	a) Result 1.e.2 and 1.e.6
+ 	**a) Result 1.e.2 and 1.e.6**
   		(i) Drop down menu used for searching and selecting compnay name. At a time only one company can be selected. When user click company name, request to server is sent with company name. company_bond_count() function is called. Inside this function, different query is executed and result is shown by using ie2_company.html
     
     			"SELECT DISTINCT `Name_of_Purchaser` FROM `company`
@@ -179,7 +179,14 @@ def search_result_party():
       		
 ![compnay  year wise with pie chart1](https://github.com/TejasLohia21/23110335_DCC/assets/143334144/cc5eb330-8106-4c72-8a21-5ec141b5b868)
 
+	**b) Result 1.e.2 and 1.e.6**
 
+**1. e.**
+  **1.e.3. The option to select a Company/Individual from a drop-down/search**
+  **1.e.4 Similarly, provide an option to select a company from a drop-down/search, showcasing which parties they have donated and what amount individually and combined**
+  **1.e.6 Pie Chart**
+
+  	1) Following image shows the web interface for selecting Party name and showing result for 1.e.3, 1.e.4 and 1.e.5
   
 
 
