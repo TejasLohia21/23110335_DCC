@@ -37,7 +37,7 @@ connection = mysql.connector.connect(
     host='localhost',
     database='assgnment4',
     user='root',
-    password='mayurt'
+    password='Sqllinux68'
 )
 cursor = connection.cursor()
 
