@@ -130,6 +130,13 @@ def search_result_party():
 
  ![search_page](https://github.com/TejasLohia21/23110335_DCC/assets/143334144/f1dc08d2-1efc-40c9-8943-cd2dc3907729)
 
+ 	b) Two types of search is implemented.
+  		i) 	Party wise electoral bonds data : Search can be made using party name, bond number, Denominations, Year of encashment, branch code
+    		ii)	Company wise electoral bonds data : Search can be made using purchaser, bond number, Denominations, Year of encashment, branch code and urn number
+
+      		
+      	
+
   
 
 
