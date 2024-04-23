@@ -149,8 +149,9 @@ def search_result_party():
 	  		     return(render_template('bond_search.html',show_flag=show_flag,total_len=len(data),data_len=data_len,party_name=party,bondnos=bond_nos,Denominations=Denominations,branch=branch,year=year,urn=urn))
    
 	a)  bond search.html will display following page
-
- ![search_page](https://github.com/TejasLohia21/23110335_DCC/assets/143334144/f1dc08d2-1efc-40c9-8943-cd2dc3907729)
+ 
+![search page](https://github.com/TejasLohia21/23110335_DCC/assets/143334144/c3cdfe83-5210-4f0c-bea6-bf5c713dff0b)
+ 
 
  	b) Two types of search is implemented.
   		i) 	Party wise electoral bonds data : Search can be made using party name, bond number, Denominations, Year of encashment, branch code
