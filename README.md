@@ -22,7 +22,37 @@ Steps :
 1) Before executing this two  files, create a database **"assgnment4"** using mysql command line.
 2) Ensure both csv files in this folder
 3) Execute code_sql_party_asn4.py to import party related date to mysql database **"assgnment4"**
-4) Execute code_sql_company_asn4.py to import party related date to mysql database **"assgnment4"**
+   
+   a)  This code will create table (party) using following query
+       create_table_query = f"""
+          CREATE TABLE IF NOT EXISTS {table_name} (
+              `Sr_No` INT PRIMARY KEY,
+              `Date_of_Encashment` DATE,
+              `Name_of_PoliticalParty` VARCHAR(255),
+              `Account_No` VARCHAR(20),
+              `Prefix` VARCHAR(5),
+              `Bond_Number` INT,
+              `Denominations` INT,
+              `Pay_Branch_Code` VARCHAR(20),
+              `Pay_Teller` INT
+          );
+  b)  Csv file is read and each row is imported in the table using following query. Dates read from the csv file is converted to mysql format using convert_to_mysql_date function.
+        insert_query = f"""
+                INSERT INTO {table_name} (`Sr_No`, `Date_of_Encashment`, 
+                        `Name_of_PoliticalParty`, `Account_No`, 
+                        `Prefix`, `Bond_Number`, `Denominations`, 
+                        `Pay_Branch_Code`, `Pay_Teller`)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+                """
+                values = (
+                        sr_no, sql_date_encashment, 
+                        party_name, account_no, 
+                        prefix,int(bond_number.replace('"', '').replace(',', '')),  # Convert bond_number to int
+                        int(denominations.replace(',', '')), 
+                        branch_code, int(teller)
+                    )
+          
+5) Execute code_sql_company_asn4.py to import party related date to mysql database **"assgnment4"**
 
 
 
