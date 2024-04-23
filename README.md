@@ -86,8 +86,35 @@ Assignment 4
                   
                   
                   
+**1. c.** : Create a frontend using FLASK, Bootstrap, CSS, Javascript, etc following the web design instructions
+            Folder name : electoral_bond
+                          a)  This folder contains flask application with template folder.
+                          b)  Template folder contains all html files
+            File :  main.py is main applicatoin which is routing all incoming request from client web browser.
+            Javascript, bootstrap and css are embedded in the each html file   
 
+                      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+                      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+                      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+          **1.e.1**
+          @app.route('/search')	
+                   def search():
+	                  render_template('bond_search.html')
+          @app.route('/search/result_party',methods = ["POST", "GET"])	
+                   def search_result_party():
+                                  return(render_template('bond_search.html',show_flag=show_flag,total_len=len(data),data_len=data_len,party_name=party,bondnos=bond_nos,Denominations=Denominations,branch=branch,year=year))
+	
+
+               
+
+@app.route('/search/result_party',methods = ["POST", "GET"])	
+def search_result_party():
+
+**1. e.**
+  **1.e.i. Search for Party related bonds search and company related bond search
   
+
+
   
 
     
