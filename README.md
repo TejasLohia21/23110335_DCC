@@ -107,14 +107,29 @@ Assignment 4
         @app.route('/search/result_company',methods = ["POST", "GET"])	
         def search_result_company():
         return(render_template('bond_search.html',show_flag=show_flag,total_len=len(data),data_len=data_len,party_name=party,bondnos=bond_nos,Denominations=Denominations,branch=branch,year=year,urn=urn))
-
-     
+   
 
 @app.route('/search/result_party',methods = ["POST", "GET"])	
 def search_result_party():
 
 **1. e.**
   **1.e.i. Search for Party related bonds search and company related bond search
+
+		@app.route('/search')	
+                	def search():
+	                render_template('bond_search.html')
+          	@app.route('/search/result_party',methods = ["POST", "GET"])	
+                	def search_result_party():
+                render_template('bond_search.html',show_flag=show_flag,total_len=len(data),data_len=data_len,party_name=party,bondnos=bond_nos,Denominations=Denominations,branch=branch,year=year))
+
+        	@app.route('/search/result_company',methods = ["POST", "GET"])	
+        		def search_result_company():
+	  		     return(render_template('bond_search.html',show_flag=show_flag,total_len=len(data),data_len=data_len,party_name=party,bondnos=bond_nos,Denominations=Denominations,branch=branch,year=year,urn=urn))
+   
+	a)  bond search.html will display following page
+
+ ![search_page](https://github.com/TejasLohia21/23110335_DCC/assets/143334144/f1dc08d2-1efc-40c9-8943-cd2dc3907729)
+
   
 
 
