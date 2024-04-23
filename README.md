@@ -1,4 +1,4 @@
-![image](https://github.com/TejasLohia21/23110335_DCC/assets/143334144/9971dcf8-7ebc-4e3f-ab85-13758ac008b6)# 23110335_DCC
+# 23110335_DCC
 Assignment 4
 
 b. [3 Pts.]
@@ -12,6 +12,10 @@ b. [3 Pts.]
 
   File : code_company_csv.py
   This file will convert Company_data.pdf to output_company.csv
+
+****ii.Then load these two different CSV files into two different tables in the database.**
+
+  
   
 
     
