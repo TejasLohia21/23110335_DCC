@@ -134,6 +134,22 @@ def search_result_party():
   		i) 	Party wise electoral bonds data : Search can be made using party name, bond number, Denominations, Year of encashment, branch code
     		ii)	Company wise electoral bonds data : Search can be made using purchaser, bond number, Denominations, Year of encashment, branch code and urn number
 
+	Result :
+ 	i)   Following image shows the result of search for bond nummber 4276.
+  		
+  ![party_search_bondno](https://github.com/TejasLohia21/23110335_DCC/assets/143334144/97539fc1-c316-47ad-a6ed-a12cd296d5f5)
+
+  	      Above search will result in following query for table.
+
+  	ii)  Following image shows the result of search for party name "shivsena" and year 2019. Total results are 125. But webpage shows first 10 results.
+   		![search_shivsena_year2019](https://github.com/TejasLohia21/23110335_DCC/assets/143334144/8a5ee0f3-bfe1-461c-8b57-21af866717d6)
+
+     
+	     Following SQL QUERY is generated
+      		SELECT * FROM party WHERE `Name_of_PoliticalParty` LIKE "%shivsena%" AND YEAR(`Date_of_Encashment`) = 2019
+   
+
+
       		
       	
 
