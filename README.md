@@ -173,7 +173,7 @@ def search_result_party():
 
  ![company_wise_bond_details](https://github.com/TejasLohia21/23110335_DCC/assets/143334144/dd57282b-747f-40b7-bd1e-d589f6d9aab8)
 
- 	**a) Result 1.e.2 and 1.e.6**
+ **a)  1.e.2 and 1.e.6**
   		(i) Drop down menu used for searching and selecting compnay name. At a time only one company can be selected. When user click company name, request to server is sent with company name. company_bond_count() function is called. Inside this function, different query is executed and result is shown by using ie2_company.html
     
     			"SELECT DISTINCT `Name_of_Purchaser` FROM `company`
@@ -185,7 +185,7 @@ def search_result_party():
       		
 ![compnay  year wise with pie chart1](https://github.com/TejasLohia21/23110335_DCC/assets/143334144/cc5eb330-8106-4c72-8a21-5ec141b5b868)
 
-	**b) Result 1.e.2 and 1.e.6**
+**b) Result 1.e.2 and 1.e.6**
  		(i) Drop down menu used for searching and selecting compnay name. At a time only one company can be selected. When user click button "party wise bond details" , request to server is sent with company name. company_bond_count() function is called. Inside this function, different query is executed and result is shown by using ie2_company.html
    		
      			SELECT DISTINCT `Name_of_Purchaser` FROM `company` 
@@ -213,7 +213,8 @@ def search_result_party():
    ![party_wise_webinterface](https://github.com/TejasLohia21/23110335_DCC/assets/143334144/da166954-0e41-4c01-957f-604d7dd868dd)
 
 
-  		**a) Result 1.e.3 and 1.e.6**
+  
+  **a) Result 1.e.3 and 1.e.6**
   		(i) Drop down menu used for searching and selecting party name.
 		(ii) At a time only one party can be selected.
   		(iii) When user click "yearwise bond details", request to server is sent with party name.
