@@ -177,7 +177,7 @@ def search_result_party():
 		(ii) Result and pie chart is showing on the same page.
   
       		
-      	![compnay  year wise with pie chart1](https://github.com/TejasLohia21/23110335_DCC/assets/143334144/cc5eb330-8106-4c72-8a21-5ec141b5b868)
+![compnay  year wise with pie chart1](https://github.com/TejasLohia21/23110335_DCC/assets/143334144/cc5eb330-8106-4c72-8a21-5ec141b5b868)
 
 
   
