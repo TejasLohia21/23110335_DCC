@@ -165,7 +165,7 @@ def search_result_party():
   
   **a) WEB INTERFACE for Year Wise  Election Bond Details for purchaser (company/indivisual)**
 
-  	1) Following image shows the web interface for selecting company name and showing result for 1.e.2, 1.e.4 and 1.e.5
+  	1) Following image shows the web interface for selecting company name and showing result for 1.e.2
 
  ![company_wise_bond_details](https://github.com/TejasLohia21/23110335_DCC/assets/143334144/dd57282b-747f-40b7-bd1e-d589f6d9aab8)
 
@@ -183,10 +183,46 @@ def search_result_party():
 ![compnay  year wise with pie chart1](https://github.com/TejasLohia21/23110335_DCC/assets/143334144/cc5eb330-8106-4c72-8a21-5ec141b5b868)
 
 
-####################################################################################################################################################################################################
 
 
-**b) Result 1.e.2 and 1.e.6**
+**1. e.**
+
+
+  **1.e.3. The option to select a Company/Individual from a drop-down/search and show year wise result**
+  
+  **a) WEB INTERFACE for Year Wise  Election Bond Details for purchaser (company/indivisual)**
+
+  	1) Following image shows the web interface for selecting Party name and showing result for 1.e.3
+
+   ![party_wise_webinterface](https://github.com/TejasLohia21/23110335_DCC/assets/143334144/da166954-0e41-4c01-957f-604d7dd868dd)
+
+
+  
+  **a) Result 1.e.3 and 1.e.6**
+  		(i) Drop down menu used for searching and selecting party name.
+		(ii) At a time only one party can be selected.
+  		(iii) When user click "yearwise bond details", request to server is sent with party name.
+		(iv) def count_party_bond():() function is called. 
+  		(vi) Inside this function, different query is executed and result is shown by using 1e3_party_bond.html
+    		(vii) Following queries are executed and result is shown year wise.
+
+	 		SELECT DISTINCT `Name_of_PoliticalParty` FROM party
+    			SELECT COUNT(*) FROM `party` WHERE `Name_of_PoliticalParty`=%s",(selected_option,)
+       			SELECT YEAR(`Date_of_Encashment`) as year, COUNT(*) as count,SUM(`Denominations`) as total_amount from party where `Name_of_PoliticalParty`=%s group by YEAR(`Date_of_Encashment`)",(selected_option,)
+
+   		b)  Result and pie chart is showing on the same page
+
+     
+![party_yearwise_result](https://github.com/TejasLohia21/23110335_DCC/assets/143334144/51c3b047-6c97-4f3c-911d-0d63168c8c2f)
+
+
+
+
+**1.e.4 Similarly, provide an option to select a company from a drop-down/search, showcasing which parties they have donated and what amount individually and combined**
+
+
+
+**b) Result 1.e.5 and 1.e.6**
  		(i)  Drop down menu used for searching and selecting compnay name. 
    		(ii) At a time only one company can be selected.
      		(iii)When user click button "party wise bond details" , request to server is sent with company name. 
