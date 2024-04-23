@@ -147,7 +147,18 @@ def search_result_party():
 	     Following SQL QUERY is generated
       		SELECT * FROM party WHERE `Name_of_PoliticalParty` LIKE "%shivsena%" AND YEAR(`Date_of_Encashment`) = 2019
    
+         iii)  Following image shows the result of 
+	 	a) Name of purchaser : "A B C INDIA LIMITED"
+   		b) Denominations     :   1000000
+![company_search_A B C INDIA LIMITED_Debinubatuibs_1000000 png](https://github.com/TejasLohia21/23110335_DCC/assets/143334144/7ce8a032-95de-4065-a14a-bc475b130a2a)
 
+	Following query is generated for above result
+ 	SELECT * FROM company WHERE `Name_of_Purchaser` LIKE "%A B C INDIA LIMITED%" AND `Denominations` = 1000000
+
+  
+
+
+   
 
       		
       	
