@@ -247,9 +247,11 @@ def search_result_party():
 
 **c) RESULT IMAGE**
 
-![party_yearwise_result](https://github.com/TejasLohia21/23110335_DCC/assets/143334144/ee56f655-c875-45a7-a7dd-c91546765949)
+![party_companywise_result](https://github.com/TejasLohia21/23110335_DCC/assets/143334144/db07c758-6732-4728-819e-c3eae5957e00)
 
-    		
+
+
+
 
 **1.e.5 Similarly, provide an option to select a company from a drop-down/search, showcasing which parties they have donated and what amount individually and combined**
 
@@ -259,18 +261,20 @@ def search_result_party():
    
 ![party_wise_webinterface](https://github.com/TejasLohia21/23110335_DCC/assets/143334144/da166954-0e41-4c01-957f-604d7dd868dd)
  
-
- 		(i)  Drop down menu used for searching and selecting compnay name. 
-   		(ii) At a time only one company can be selected.
-     		(iii)When user click button "party wise bond details" , request to server is sent with company name. 
-       		(iv) company_bond_count() function is called. 
-	 	(v)  Inside this function, different query is executed and result is shown by using ie2_company.html
+ **b) Result 1.e.5**
+ 		(1)  Drop down menu used for searching and selecting compnay name. 
+   		(2) At a time only one company can be selected.
+     		(3) When user click button "party wise bond details" , request to server is sent with company name. 
+       		(4) company_bond_count() function is called. 
+	 	(5)  Inside this function, different query is executed and result is shown by using ie2_company.html
    		
      			SELECT DISTINCT `Name_of_Purchaser` FROM `company` 
 			SELECT COUNT(*) FROM company where `Name_of_Purchaser`=%s",(selected_option,)
 			SELECT DISTINCT bonds.party_name, SUM(bonds.rs) from (SELECT party.Name_of_PoliticalParty as party_name, party.Denominations as rs, party.Bond_Number as bn from party INNER JOIN company ON company.Bond_Number=party.Bond_Number WHERE company.Name_of_Purchaser=%s) bonds GROUP BY bonds.party_name",(selected_option,)
  		
-		(ii)  Result and pie chart is showing on the same page.
+		(6)  Result and pie chart is showing on the same page.
+
+  
   ![company_partywise_result](https://github.com/TejasLohia21/23110335_DCC/assets/143334144/5df30da2-d99d-4072-a6e3-4000f8bd2839)
 
   
