@@ -208,8 +208,12 @@ def search_result_party():
   **1.e.6 Pie Chart**
   
 
-  	1) Following image shows the web interface for selecting Party name and showing result for 1.e.3, 1.e.4 and 1.e.5
-  
+  	1) Following image shows the web interface for selecting Party name and showing result for 1.e.3, 1.e.4 and 1.e.6
+
+   ![party_wise_webinterface](https://github.com/TejasLohia21/23110335_DCC/assets/143334144/da166954-0e41-4c01-957f-604d7dd868dd)
+
+  		**a) Result 1.e.3 and 1.e.6**
+  		(i) Drop down menu used for searching and selecting party name. At a time only one party can be selected. When user click **"yearwise bond details"**, request to server is sent with party name. **def count_party_bond():() **function is called. Inside this function, different query is executed and result is shown by using **1e3_party_bond.html**
 
 
   
