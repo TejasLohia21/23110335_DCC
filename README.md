@@ -388,6 +388,15 @@ def search_result_party():
       					
 
 
+**5. Reference**
+			(1)   https://flask.palletsprojects.com/en/3.0.x/quickstart/
+   			(2)   https://www.w3schools.com/bootstrap/bootstrap_forms.asp
+      			(3)   https://www.w3schools.com/bootstrap/bootstrap_grid_basic.asp
+	 		(4)   https://getbootstrap.com/docs/4.1/components/forms/
+    			(5)   https://codepen.io/BillDou/pen/oNoGBXb
+       			(6)   https://github.com/PatidarRitesh/Flask_App_Demo/tree/main
+	  		(7)   Class Excercise
     
+   
 
        
