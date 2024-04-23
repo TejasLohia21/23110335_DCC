@@ -356,7 +356,7 @@ def search_result_party():
      					(d) Issue Branch Code
 	  				(e) Year of issue
 
-**4. Readme
+**4. Readme**
 		(1) Readme with result of 1.e has been shown.
   		(2) pip files required to install : flask flask-mysqldb json
 	 	(3) Port number and IP address can be specified in main.py
