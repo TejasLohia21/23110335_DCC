@@ -142,9 +142,8 @@ def search_result_party():
   	      Above search will result in following query for table.
 
   	ii)  Following image shows the result of search for party name "shivsena" and year 2019. Total results are 125. But webpage shows first 10 results.
-   		![search_shivsena_year2019](https://github.com/TejasLohia21/23110335_DCC/assets/143334144/8a5ee0f3-bfe1-461c-8b57-21af866717d6)
+   ![search_shivsena_year2019](https://github.com/TejasLohia21/23110335_DCC/assets/143334144/6c13d711-37f5-48d7-97cd-fa808f41aa10)
 
-     
 	     Following SQL QUERY is generated
       		SELECT * FROM party WHERE `Name_of_PoliticalParty` LIKE "%shivsena%" AND YEAR(`Date_of_Encashment`) = 2019
    
