@@ -340,4 +340,33 @@ def search_result_party():
 
   
     
-  
+**3. Extra Features**
+			(1) In search program, different type of combination of search is implemented.
+   			(2) For company search, follwing fields in different combination can be used
+      					(a) Name of Purchaseer
+	   				(b) Bond No
+					(c) Denomination
+     					(d) Issue Branch Code
+	  				(e) Year of issue
+       					(d) Ref No URN
+	    		(3) For party search, follwing fields in different combination can be used
+       					(a) Name of Party
+	   				(b) Bond No
+					(c) Denomination
+     					(d) Issue Branch Code
+	  				(e) Year of issue
+
+**4. Readme
+		(1) Readme with result of 1.e has been shown.
+  		(2) pip files required to install : flask flask-mysqldb json
+	 	(3) Port number and IP address can be specified in main.py
+   			app.run(host="0.0.0.0", port="8900", debug = True) 
+      		(4) Following command is used to start server
+    					python3 main.py
+      
+      					
+
+
+    
+
+       
