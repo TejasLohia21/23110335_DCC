@@ -182,6 +182,10 @@ def search_result_party():
       		
 ![compnay  year wise with pie chart1](https://github.com/TejasLohia21/23110335_DCC/assets/143334144/cc5eb330-8106-4c72-8a21-5ec141b5b868)
 
+
+####################################################################################################################################################################################################
+
+
 **b) Result 1.e.2 and 1.e.6**
  		(i)  Drop down menu used for searching and selecting compnay name. 
    		(ii) At a time only one company can be selected.
