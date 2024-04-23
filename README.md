@@ -163,24 +163,20 @@ def search_result_party():
 
   **1.e.2. The option to select a Company/Individual from a drop-down/search**
   
-  **1.e.5 Similarly, provide an option to select a company from a drop-down/search, showcasing which parties they have donated and what amount individually and combined**
-  
-  **1.e.6 Pie Chart**
-
-   Same interface for all above exercise
+  **a) WEB INTERFACE FOR Year WISE  Election Bond Details for purchaser (company/indivisual)**
 
   	1) Following image shows the web interface for selecting company name and showing result for 1.e.2, 1.e.4 and 1.e.5
 
  ![company_wise_bond_details](https://github.com/TejasLohia21/23110335_DCC/assets/143334144/dd57282b-747f-40b7-bd1e-d589f6d9aab8)
 
- **a)  1.e.2 and 1.e.6**
-  		(i) Drop down menu used for searching and selecting compnay name. At a time only one company can be selected. When user click company name, request to server is sent with company name. company_bond_count() function is called. Inside this function, different query is executed and result is shown by using ie2_company.html
+ **b) Result for Year WISE  Election Bond Details for purchaser (company/indivisual)**
+  	(1) Drop down menu used for searching and selecting compnay name. At a time only one company can be selected. When user click company name, request to server is sent with company name. company_bond_count() function is called. Inside this function, different query is executed and result is shown by using ie2_company.html
     
     			"SELECT DISTINCT `Name_of_Purchaser` FROM `company`
 			"SELECT COUNT(*) FROM company where `Name_of_Purchaser`=%s",(selected_option,)) 	
    			("SELECT YEAR(`Date_of_Purchase`) as year, COUNT(*) as count,SUM(`Denominations`) as total_amount from company where `Name_of_Purchaser`=%s group by YEAR(`Date_of_Purchase`)",(selected_option,)); 
 
-		(ii) Result and pie chart is showing on the same page.
+	(2) Result and pie chart is showing on the same page.
   
       		
 ![compnay  year wise with pie chart1](https://github.com/TejasLohia21/23110335_DCC/assets/143334144/cc5eb330-8106-4c72-8a21-5ec141b5b868)
@@ -233,8 +229,13 @@ def search_result_party():
 
     		
 
-
+**1.e.5 Similarly, provide an option to select a company from a drop-down/search, showcasing which parties they have donated and what amount individually and combined**
   
+
+ **1.e.6 Pie Chart**
+ 	Ref. 1.e.2,1.e.3,1.e.4,1.e.5
+  	Pie Chart has been shown along with above result (1.e.2,1.e.3,1.e.4,1.e.5)
+
 
     
   
