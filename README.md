@@ -336,6 +336,27 @@ def search_result_party():
 		    			}
 				    
 					});
+
+
+     					new Chart(document.getElementById("div_party_vs_amount_pie_chart"), {
+							type: 'pie',
+							data: {
+				            			labels: xValues,
+				            			datasets: [{
+									label: "Party Wise Bond",
+									backgroundColor:colors,
+				                			data: yValues
+				            			}]
+				        		},
+							options: {
+								title: {
+									display: true,
+									text: 'Party Wise Bond'
+								}
+					
+							}
+						}
+						);
 		
 
   
