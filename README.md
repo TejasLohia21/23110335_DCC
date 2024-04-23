@@ -122,7 +122,7 @@ def search_result_party():
 			app = Flask(__name__)
 			app.config['MYSQL_HOST'] = 'localhost'
 			app.config['MYSQL_USER'] = 'root'
-			app.config['MYSQL_PASSWORD'] = 'mayurt'
+			app.config['MYSQL_PASSWORD'] = 'Sqllinux68'
 			app.config['MYSQL_DB'] = 'assgnment4'
 			
 			mysql = MySQL(app)
