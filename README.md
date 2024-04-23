@@ -104,6 +104,9 @@ Assignment 4
                    def search_result_party():
                    return(render_template('bond_search.html',show_flag=show_flag,total_len=len(data),data_len=data_len,party_name=party,bondnos=bond_nos,Denominations=Denominations,branch=branch,year=year))
 
+        @app.route('/search/result_company',methods = ["POST", "GET"])	
+        def search_result_company():
+        return(render_template('bond_search.html',show_flag=show_flag,total_len=len(data),data_len=data_len,party_name=party,bondnos=bond_nos,Denominations=Denominations,branch=branch,year=year,urn=urn))
 
      
 
