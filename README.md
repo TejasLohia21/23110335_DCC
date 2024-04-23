@@ -113,6 +113,27 @@ Assignment 4
 @app.route('/search/result_party',methods = ["POST", "GET"])	
 def search_result_party():
 
+**1. d. : Connect the front end to the database**
+
+	1) In the main.py file, following are used to configure application for data base connection
+ 		
+   			from flask_mysqldb import MySQL
+	
+			app = Flask(__name__)
+			app.config['MYSQL_HOST'] = 'localhost'
+			app.config['MYSQL_USER'] = 'root'
+			app.config['MYSQL_PASSWORD'] = 'mayurt'
+			app.config['MYSQL_DB'] = 'assgnment4'
+			
+			mysql = MySQL(app)
+
+	2)  Following functions are used to establish connecting and get data from database
+
+		 	cursor=mysql.connection.cursor()
+			cursor.execute("SELECT DISTINCT `Name_of_PoliticalParty` FROM party")
+			data = cursor.fetchall()
+	  		cursor.close()
+
 **1. e.**
   ****1.e.i. Search for Party related bonds search and company related bond search**
 
