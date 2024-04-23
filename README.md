@@ -305,5 +305,39 @@ def search_result_party():
   	Pie Chart has been shown along with above result (1.e.2,1.e.3,1.e.4,1.e.5)
 
 
+**2. Plots:**
+		(1)	ChartJS has been used in all above html files for ploting the graph
+  		(2)	Script file included in the html file
+    				<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+ 		(3)	Following is used for pie chart
+
+		      			new Chart(ctx, {
+					type: 'bar',
+				    	data: {
+					    	labels: xValues,
+					      	datasets: [{
+							label: 'Year Wise Bond',
+							backgroundColor:colors,
+							borderColor: "#FFFFFF",
+							data: yValues,
+							borderWidth: 1
+					      	}]
+				    	},
+				    	options: {
+		        			scales: {
+		            			yAxes: [{
+		                			ticks: {
+				            			beginAtZero: true,
+				            			suggestedMax: 15 // Set the maximum height of the chart to 20
+				        		}
+		            				}]
+		        			}
+		    			}
+				    
+					});
+		
+
+  
     
   
