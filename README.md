@@ -306,11 +306,11 @@ def search_result_party():
 
 
 **2. Plots:**
-		(1)	ChartJS has been used in all above html files for ploting the graph
-  		(2)	Script file included in the html file
-    				<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+			(1)	ChartJS has been used in all above html files for ploting the graph
+  			(2)	Script file included in the html file
+    						<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 
- 		(3)	Following is used for pie chart
+ 			(3)	Following is used for pie chart/pie (type bar/pie)
 
 		      			new Chart(ctx, {
 					type: 'bar',
