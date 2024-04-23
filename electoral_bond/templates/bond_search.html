@@ -11,11 +11,22 @@
 </head>
 <body>
 	<div class="container">
+                <div class="row">
+                        <div class="row">
+				<h1 class="display-1" align="center"> Election Bond Details</h1>
+			</div>
+			<div class="row">
+				<div class="col-lg-4 bg-success h1" align="center" > <a href="/search">Election Bond Search</a> </div>
+				<div class="col-lg-4 bg-warning h1" align="center"> <a href="/party">Party Bonds  </div>
+				<div class="col-lg-4 bg-info h1" align="center"> <a href="/company">Purchaser Bond </a></div>
+			</div>
+                </div>
+
                 <!-- Ref https://www.w3schools.com/bootstrap/bootstrap_forms.asp -->
                 <div class="row">
                         <div class="col-lg-6 col-md-6">
                             <form method="POST" action="/search/result_party">
-                                <h1>
+                                <h1 align="center">
                                         Party Wise Search
                                 </h1>
                                 <div class="form-group">
@@ -59,7 +70,7 @@
                         <div class="col-lg-6 col-md-6">
                             <form method="POST" action="/search/result_company"">
                                 <!-- Form 2 content goes here -->
-                                <h1>
+                                <h1 align="center">
                                         Company/Individual Search
                                 </h1>
                                 <div class="form-group">
