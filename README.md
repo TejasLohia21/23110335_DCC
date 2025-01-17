@@ -1,6 +1,68 @@
 # Implementation of interactive website to access data in a well visualized form
 
-**1. b. [3 Pts.]**
+
+###Tasks Perfomed
+
+Project Implementation: Electoral Bonds Data Analysis and Visualization
+
+1. PDF to Database Conversion
+
+a. Loading PDF Files into Database Tables
+	•	Files Processed:
+	•	Details of Electoral Bonds submitted by SBI on 21st March 2024 (EB_Redemption_Details): Bonds encashed by political parties.
+	•	Details of Electoral Bonds submitted by SBI on 21st March 2024 (EB_Purchase_Details): Bonds purchased by Individuals and Companies.
+
+b. Steps for Processing:
+	1.	PDF to CSV Conversion:
+	•	Utilized fitz (PyMuPDF) for converting the PDF files into CSV format.
+	•	Applied necessary preprocessing to ensure data integrity and proper formatting before saving as CSV.
+	2.	Loading CSV into Database:
+	•	Loaded the processed CSV files into two separate tables in a relational database.
+	•	Table 1: EB_Redemption_Details
+	•	Table 2: EB_Purchase_Details
+
+2. Frontend Development
+
+c. Creating the Frontend
+	•	Developed a frontend using:
+	•	Flask: Backend framework for handling requests and rendering templates.
+	•	Bootstrap: For responsive and aesthetic web design.
+	•	CSS & JavaScript: For custom styling and interactive functionalities.
+
+d. Connecting Frontend to Database
+	•	Established a connection between the frontend and the database to fetch and display data dynamically, as covered in the special class.
+
+3. Web Design Features
+
+e. Implemented Features:
+	1.	Search Functionality:
+	•	Users can search for specific records based on Bond Number or filter data on columns like date, political party, or company name.
+	•	Search results are displayed in a dynamically fetched table from the database.
+	2.	Dropdown/Search Options:
+	•	Select a Company/Individual from a dropdown/search to view the total number of bonds and their value purchased per year. Results are visualized in a bar plot.
+	•	Select a political party to view the total number of bonds and their value per year. Results are visualized in a bar plot.
+	3.	Donation Insights:
+	•	Option to select a political party and see which companies have donated to it and the amounts (individually and combined).
+	•	Option to select a company and view the political parties they have donated to and the amounts (individually and combined).
+	4.	Data Visualization:
+	•	Provided a pie chart depicting the total amount of donations to all parties.
+	5.	Plot Export Functionality:
+	•	Added functionality to save displayed plots in formats like PNG/JPEG.
+	6.	Additional Plots:
+	•	Created and showcased various plots such as Pie charts, Bar charts, and Line charts using ChartJS to visualize data insights.
+	•	For complex relationships, used Alluvial diagrams in sections 1e4 and 1e5.
+
+f. Additional Features:
+	•	Developed a unique plot using ChartJS that adds a fresh perspective to the data visualization, earning bonus points.
+
+	•	A comprehensive README file with instructions on how to set up the website locally and documentation of all implemented features.
+
+This README serves as a detailed implementation guide for the project, showcasing the steps taken from data processing to web application development, culminating in a robust data analysis and visualization tool.
+
+
+####Implemenation
+
+**1. b**
   **1.b.i. First, convert the PDF files to CSV using FITZ.** 
         Folder "pdf to csv" contains two python files which converts following conversion
           1) Election bond data related to party : from Party_data.pdf to output_party.csv
