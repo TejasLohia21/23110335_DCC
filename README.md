@@ -1,5 +1,4 @@
-# 23110335_DCC
-Assignment 4
+# Implementation of interactive website to access data in a well visualized form
 
 **1. b. [3 Pts.]**
   **1.b.i. First, convert the PDF files to CSV using FITZ.** 
